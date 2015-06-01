@@ -36,9 +36,26 @@
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>
+# VCL for Varnish 3.x without libvmod_cookie.
+# Add to sub vcl_recv
+if (req.http.Cookie) {
+	set req.http.Cookie = regsuball(req.http.Cookie, "(^|; ) *RT=[^;]+;? *", "\1");
+
+	# GoSquared
+	set req.http.Cookie = regsuball(req.http.Cookie, "(^|; ) *gs_._GSN-[^;]*=[^;]+;? *", "\1");
+
+	# Google Analytics
+	set req.http.Cookie = regsuball(req.http.Cookie, "(^|; ) *_ga=[^;]+;? *", "\1");
+	set req.http.Cookie = regsuball(req.http.Cookie, "(^|; ) *__utm..?=[^;]+;? *", "\1");
+
+	# Yahoo Search
+	set req.http.Cookie = regsuball(req.http.Cookie, "(^|; ) *ysm_[^=]+=[^;]+;? *", "\1");
+
+	if (req.http.Cookie == "") {
+		remove req.http.Cookie;
+	}
+}
 </code></pre>
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
