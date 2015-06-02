@@ -18,6 +18,23 @@
     {
       "title": "Yahoo Search Marketing",
       "cookieNamePatterns": ["ysm_[^=]+"]
+    },
+    {
+      "title": "Olark",
+      "infoUrl": "https://www.olark.com/help/cookies",
+      "cookieNamePatterns": ["(hblid|wcsid|olfsk)", "_ok(bk|lv|la|gid|ac|ck)"]
+    },
+    {
+      "title": "GetVero.com",
+      "cookieNamePatterns": ["__vero[^=]*"]
+    },
+    {
+      "title": "AddThis.com",
+      "cookieNamePatterns": ["__at(vuc|uvc|uvs|rfs)"]
+    },
+    {
+      "title": "BazaarVoice",
+      "cookieNamePatterns": ["bvgacef[^=]*"]
     }
   ]
 }
