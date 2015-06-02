@@ -65,7 +65,8 @@ jQuery.ajax('cookies.json').done(function (data) {
     var vcl = [
       '# VCL for Varnish 3.x without libvmod_cookie.',
       '# Add to sub vcl_recv',
-      'if (req.http.Cookie) {'
+      'if (req.http.Cookie) {',
+      ''
     ].join('\n');
     data.cookieSets.forEach(function (set) {
       if (set.title) { vcl += ['\t', '# ', set.title, '\n'].join(''); }
