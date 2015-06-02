@@ -1,0 +1,23 @@
+{
+  "cookieSets": [
+    {
+      "title": "Yahoo Boomerang Roundtrip",
+      "infoUrl": "http://yahoo.github.io/boomerang/doc/howtos/howto-6.html",
+      "cookieNamePatterns": ["RT"]
+    },
+    {
+      "title": "GoSquared",
+      "infoUrl": "https://www.gosquared.com/legal/privacy/statement/#our-use-of-cookies",
+      "cookieNamePatterns": ["gs_[up]_[^=]+"]
+    },
+    {
+      "title": "Google Analytics",
+      "infoUrl": "https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage",
+      "cookieNamePatterns": ["_gat?", "__utm..?"]
+    },
+    {
+      "title": "Yahoo Search Marketing",
+      "cookieNamePatterns": ["ysm_[^=]+"]
+    }
+  ]
+}
